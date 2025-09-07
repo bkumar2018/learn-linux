@@ -1,0 +1,40 @@
+grep -->  "global regular expression print.”
+
+grep "error" logfile.txt
+
+grep -i "error" logfile.txt
+
+grep -r "TODO"
+
+grep -n "warning" logfile.txt
+
+grep -c "error" logfile.txt
+
+grep -l "error" *.log --> print only filenames with matches
+
+grep -v "success" logfile.txt --> invert match, find no matching lines
+
+grep "^error" logfile.txt --> match lines starting with a pattern
+
+grep "failure$" logfile.txt  --> match lines ending with a pattern
+
+grep -E "error|failure" logfile.txt  --> E enables extended regular expression
+
+ps aux | grep "firefox"
+
+grep -w "is" file.txt ---> serch for whole words 
+
+grep -irn "error" /var/log  --> combine multi options
+
+find /path/to/dir -name "*.txt" | xargs grep "search_pattern"  --> combine find and grep to search within specific types of files
+
+tail -f /var/log/syslog | grep "ERROR"
+
+
+Common use cases:
+Searching logs: Quickly find error messages or specific events in log files.
+Filtering command output: Narrow down results of commands like ps, ls, netstat.
+Searching config files: Locate specific configuration settings in large files.
+Validating Data: Verify pattern or formats in data files
+
+

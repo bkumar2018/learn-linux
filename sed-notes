@@ -1,0 +1,69 @@
+
+'sed' -> Stream Editor 
+For text manipulation and transformation
+
+'s' : substitution Substitution command, used to search and replace.
+'-i': Edit files in place (modify the file directly).
+'-e':  Allows multiple editing commands in a single sed script.
+'-n': 
+d: Delete lines matching a pattern.
+p: Print lines matching a pattern.
+g: Global replacement; apply the substitution to all matches in a line.
+r: Read a file and append its contents.
+
+
+sed 's/foo/bar' file.txt  --> substitute text in a file
+
+sed 's/foo/bar/g' file.txt --> replace all occurence of "foo" with "bar" on each line
+
+sed 's/foo/bar/gi' file.txt --> case-insensitive replacement
+
+Editing file in-place
+
+sed -i 's/foo/bar/g' file.txt
+
+sed '/error/d' file.txt  --> delete lines matching pattern
+
+using multi commands:
+sed -e 's/foo/bar/g' -e 's/baz/qux/g' file.txt
+
+sed '{s/foo/bar/g; s/baz/qux/g}' file.txt
+
+
+subsitute on specific line
+sed '2s/foo/bar/' file.txt  --> command replaces "foo" with "bar" only on the second line.
+
+sed '2,4s/foo/bar/g' file.txt  --> replaces "foo" with "bar" on lines 2 through 4.
+
+sed 's/,/;/g' file.csv
+
+sed -n '/^foo/p' file.txt --->To find lines starting with "foo":
+
+sed -n '/bar$/p' file.txt  --> To find lines ending with "bar"
+
+
+Use Cases : sed
+Batch substitution
+Text formatting
+Config file editing 
+Log Analysis
+Data cleanup
+
+Batch Substitution: Quickly replace strings or patterns in multiple files.
+Text Formatting: Format data files, such as removing blank lines or unwanted characters.
+Config File Editing: Automate updates to configuration files.
+Log Analysis: Extract relevant information or modify log files for readability.
+Data Cleanup: Clean up CSV or other data files by removing unwanted text or formatting.
+
+Tips and best practices for using 'sed':
+Use -i Carefully: In-place editing can be powerful but risky. Always back up files before using -i.
+Test Your Commands: Test complex sed commands without -i first to ensure they work as expected.
+Use Regular Expressions: Leverage sed’s regular expression support for powerful text manipulations.
+Combine with Other Tools: Use sed with grep, awk, and other Unix utilities for advanced data processing.
+Write Scripts: Save complex sed commands in scripts for reuse and automation.
+
+
+
+
+
+

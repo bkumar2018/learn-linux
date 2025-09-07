@@ -1,0 +1,23 @@
+cd -
+cd ~
+cd /etc
+cd /var
+cd -
+
+clear
+
+reset -- clear all logs from screen
+
+pushd /var
+popd
+ctrl+A --> to goto begining of the command terminal
+
+#get count
+docker ps -qa | wc -l
+
+ps -elf | wc -l
+
+#get encoded username base64
+echo -n 'your-username' | base64
+
+
