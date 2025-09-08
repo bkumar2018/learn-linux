@@ -1,0 +1,119 @@
+
+1. pwd - print working directory
+2. cd - change directory
+    cd /name of directory/something
+
+It can get pretty tiring navigating with absolute and relative paths all the time. Luckily, there are some shortcuts to help you out.
+
+    cd .
+    cd ..
+    cd ~
+    cd -
+
+. (current directory): This is the directory you are currently in.
+.. (previous directory): Takes you to the directory above your current one.
+~ (home directory): This directory defaults to your “home directory,” such as /home/pete.
+- (previous directory): This will take you to the previous directory you were just at.
+
+
+5. ls - list directory
+
+ls  
+ls /namedir
+ls -a
+ls -l
+ls -la
+
+
+6. touch allows you to create new empty files.
+
+$ touch mysuperduperfile
+
+
+file nameofiletocheck
+
+7. cat nameoffile
+8.  less nameoffile
+more nameoffile
+
+
+9. history - prev used commnads
+clear - clear terminal 
+
+
+10. copy namoffile /to/location
+
+You can use wildcards in every command for more flexibility.
+
+* the wildcard of wildcards, it's used to represent all single characters or any string.
+? used to represent one character
+[] used to represent any character within the brackets
+
+
+cp *.jpg /home/pete/Pictures
+
+This will copy all files with the .jpg extension in your current directory to the Pictures directory.
+
+A useful command is to use the -r flag; this will recursively copy the files and directories within a directory.
+
+cp -r filename /to/location
+
+11. mv (Move)
+Used for moving files and also renaming them
+
+rename file
+    mv oldfile newfile
+
+move file to location
+    mv file2 /home/pete/Documents
+
+move more then 2 files
+    mv file_1 file_2 /somedirectory
+
+rename directries
+    mv directory1 directory2
+
+12. mkdir (make directory)
+
+You can even make multiple directories at the same time.
+    mkdir books paintings
+
+You can also create subdirectories at the same time with the -p (parent flag).
+    mkdir -p books/hemmingway/favorites
+
+13. rm (Remove)
+
+rm -f file1
+rm -i file1
+
+You can't just rm a directory by default; you'll need to add the -r flag (recursive) to remove all the files and any subdirectories it may have.
+    rm -r dir1
+
+rmdir directory
+
+14. find 
+
+With all these files we have on the system, it can get a little hectic trying to find a specific one. Well, there's a command we can use for that: find!
+
+    $ find 
+
+    find /home -name puppies.jpg
+
+With find, you'll have to specify the directory you'll be searching in and what you're searching for. In this case, we are trying to find a file by the name of puppies.jpg.
+
+
+find /home -type d -name MyFolder
+
+You can see that I set the type of file I'm trying to find as d for directory, and I'm still searching by the name of MyFolder.
+
+15. help
+
+
+help echo
+
+man ls
+
+whatis cat
+
+
+

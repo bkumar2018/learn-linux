@@ -1,0 +1,211 @@
+
+/ --> root
+
+
+/home/bob --> bob user directory
+
+
+/home/mick
+
+~ --> represent home directory
+
+
+command and arguments:
+
+echo   --> accept an argument
+echo Hello
+
+uptime --> command
+
+
+command types:
+
+internal or built-in commands
+echo, cd , pwd, set etc
+
+external commands:
+mv, date, uptime,cp, etc
+
+type echo
+
+use type command prefix wiht command: will show its in-built command or not.
+
+Q: Which command would you use to find out the type of a command?
+A: type 
+
+
+after login by user we login to user home directory
+
+/home/user1
+
+pwd
+ls
+
+mkdir atest
+
+mkdir atest btest ctest 
+
+cd atest
+pwd
+
+Absoulte and Relative Path:
+
+Absoulte path:
+    cd /home/bob/asia
+
+Relative path:
+    cd asia
+
+cat > city.txt
+name of city type here will go inside city.txt file
+
+touch nameoffile.txt --> create an empty file.
+
+
+ls -l
+ls -a 
+
+ls -la 
+
+cd .. take to prev dir 
+
+ls -lt ->  long list files in order created 
+
+ls -ltr -> long list files in the reverse order created.
+
+
+whatis date
+
+# Use the -p option to create both directories in one go
+
+mkdir -p /home/bob/fish/salmon
+
+echo $SHELL
+
+Shell Types:
+------
+Bourne Shell (sh)
+C Shell (csh )
+Korn Shell (ksh)
+Z shell (zsh)
+Bourne again Shell (bash)
+
+chsh  -- > to change shell
+
+alias dt=date
+dt 
+
+env - command to get all pam_environment varibales
+
+export OFFICE=pune
+
+add then to 
+~/.profile. or ~/.pam_environment
+
+
+path varibales:
+echo $PATH 
+
+
+java - command not found
+which java 
+export PATH=$PATH:/opt/java/bin
+
+which java
+
+echo $PS1
+
+PS1="ubuntu-server:"
+echo $PS1
+
+
+chanchal@Chanchals-MacBook-Pro learn-linux % echo $PS1
+%n@%m %1~ %# 
+
+
+Q: Change the SHELL from bash to Bourne Shell
+A:
+bob@caleston-lp10:~$ chsh
+Password: 
+Changing the login shell for bob
+Enter the new value, or press ENTER for the default
+        Login Shell [/bin/bash]: /bin/sh
+
+
+bob@caleston-lp10:~$ env
+VISIBLE=now
+XDG_SESSION_ID=c1
+USER=bob
+PWD=/home/bob
+HOME=/home/bob
+MAIL=/var/mail/bob
+SHELL=/bin/bash
+TERM=xterm-256color
+SHLVL=1
+LOGNAME=bob
+XDG_RUNTIME_DIR=/run/user/1000
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+_=/usr/bin/env
+
+
+User profile scripts, such as ~/.profile, ~/.bash_profile, ~/.bashrc, and others, are executed when a user logs in, allowing the setup of the environment according to personal preferences.
+
+For example, to add a variable using the command line:
+
+
+echo 'export MY_VARIABLE="example_value"' >> ~/.profile
+This command appends the export statement to the end of the ~/.profile file, making the variable MY_VARIABLE persistent across sessions.
+
+bob@caleston-lp10:~$ echo 'export MY_VARIABLE="example_value"' >> ~/.profile
+bob@caleston-lp10:~$ 
+bob@caleston-lp10:~$ vim ~/.profile
+bob@caleston-lp10:~$ cat  ~/.profile
+export PATH=~/.local/bin:/home/bob/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+export MY_VARIABLE="example_value"
+
+
+echo 'alias ll="ls -l"' >> ~/.profile
+
+Q: Create a new environment variable called PROJECT=MERCURY and make it persistent by adding the variable to the ~/.profile file.
+
+echo 'export PROJECT="MERCURY"' >> ~/.profile
+
+bob@caleston-lp10:~$ echo 'export PROJECT="MERCURY"' >> ~/.profile
+bob@caleston-lp10:~$ cat ~/.profile 
+export PATH=~/.local/bin:/home/bob/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+export MY_VARIABLE="example_value"
+alias ll="ls -l"
+export PROJECT="MERCURY"
+
+echo $PATH
+
+Q: Set an alias called up for the command uptime and make it persistent by adding to ~/.profile file.
+
+echo 'alias up="uptime"' >> ~/.profile
+
+bob@caleston-lp10:~$ echo 'alias up="uptime"' >> ~/.profile
+bob@caleston-lp10:~$ cat ~/.profile 
+export PATH=~/.local/bin:/home/bob/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+export MY_VARIABLE="example_value"
+alias ll="ls -l"
+export PROJECT="MERCURY"
+alias up="uptime"
+
+
+Q: Update Bob's prompt so that it displays the date as per the format below:
+Example: [Wed Apr 22]bob@caleston-lp10:~$
+Make sure the change is made persistent.
+
+A:
+PS1='[\d]\u@\h:\w$'
+echo "export PS1='[\d]\u@\h:\w$'" >> ~/.profile
+source ~/.profile
+
+
+
+echo "export PS1='[\d]\u@\h:\w$'" >> ~/.zshrc
+source ~/.zshrc
+
+
+
+https://github.com/kodekloudhub/linux-basics-course
